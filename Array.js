@@ -275,25 +275,33 @@ var str = "saare jaha se acha hindustaan hmara";
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Sliding Window  >
 
-var maxSlidingWindow = function (nums, k) {
-  //   let result = [];
-  //   for (let i = 0; i <= nums.length - k; i++) {
-  //     let newArr = nums;
-  //     let window = newArr.slice(i, i + k);
-  //     result.push(Math.max(...window));
-  //   }
-  //   return result;
+// var maxSlidingWindow = function (nums, k) {
+//   //   let result = [];
+//   //   for (let i = 0; i <= nums.length - k; i++) {
+//   //     let newArr = nums;
+//   //     let window = newArr.slice(i, i + k);
+//   //     result.push(Math.max(...window));
+//   //   }
+//   //   return result;
 
-  const result = [];
-  const deque = [];
-  for (let i = 0; i < nums.length - k; i++) {
-    if (deque.length > 0 && deque[0] < nums[i] <= i - k) {
-      deque.shift();
-    }
-    while (deque.length > 0 && nums[deque[deque.length - 1]] < nums[i]) {
-      deque.pop();
-    }
-  }
-};
+//   const result = [];
+//   const deque = [];
+//   for (let i = 0; i < nums.length - k; i++) {
+//     if (deque.length > 0 && deque[0] <= i - k) {
+//       deque.shift();
+//     }
+//     while (deque.length > 0 && nums[deque[deque.length - 1]] < nums[i]) {
+//       deque.pop();
+//     }
+//     deque.push(i);
+//     if (i >= k - 1) {
+//       result.push(nums[deque[0]]);
+//     }
+//   }
+//   return result;
+// };
 
-console.log(maxSlidingWindow([1, 3, -1, 7, 5, 3, 6, 7], (k = 3)));
+// console.log(maxSlidingWindow([1, 3, -1, 7, 5, 3, 6, 7], (k = 3)));
+// // deque[3,1,2]
+// // result[3,3,]
+// // deque[3,1,3]
